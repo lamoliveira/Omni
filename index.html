@@ -1,0 +1,1485 @@
+<html lang="pt-br"
+    class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="salesforce-allowed-domains" content="voeomni.com.br">
+    <meta name="salesforce-community" content="https://omnibrasil.force.com/voeomni">
+    <meta name="salesforce-client-id"
+        content="3MVG9vtcvGoeH2biN2jDGLntf73_K90rrfZ_bmN0tBx6ydF7R1MYgo1O8EnFAN0eYu1sQ62gip0TJlYdgrrq.">
+    <meta name="salesforce-redirect-uri" content="https://voeomni.com.br/sf/callback">
+    <meta name="salesforce-forgot-password-enabled" content="true">
+    <meta name="salesforce-save-access-token" content="false">
+    <meta name="salesforce-self-register-starturl-enabled" content="false">
+    <meta name="salesforce-mode" content="modal">
+    <meta name="salesforce-target" content="#btn-salesforce-login">
+    <meta name="salesforce-save-access-token" content="true">
+    <meta name="salesforce-login-handler" content="onLogin">
+
+    <link href="https://omnibrasil.force.com/voeomni/servlet/servlet.loginwidgetcontroller?type=css" rel="stylesheet"
+        type="text/css">
+
+    <title>OMNI </title>
+
+    <link rel="stylesheet" href="https://www.omnibrasil.com.br/css/919c9ee.css">
+
+    <link rel="icon" type="image/ico" href="https://www.omnibrasil.com.br/favicon.ico">
+
+    <!--[if lt IE 9]>
+                        <script type="text/javascript" src="https://www.omnibrasil.com.br/js/31dd475.js"></script>
+                <![endif]-->
+
+
+
+
+
+                <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.8.0.min.js"></script>
+                <script type="text/javascript">
+                
+                window.addEventListener("load", mediaSizer);
+                        //window.addEventListener("resize", mediaSizer);
+                        // Listeners that will react when the page first loads or is resized.
+                        // If any of these events take place the mediaSizer() function executes.
+                
+                        var vizList = [
+                
+                                    
+                                    "https://demo.tableau.com/t/LuizOliveira/views/FinanasCorporativas-PainelDemonstrativoFinanceiro_16526539401770/Cockpit-Finance",
+                                    "https://us-east-1.online.tableau.com/t/luizoliveira/views/Resultado_16526519862420/AcompanhamentodeResultado"
+                
+                                ];
+                        // Array of Tableau Server URLs for dashboard or sheet navigation.
+                    
+                        var viz,
+                            vizLen = vizList.length,
+                            vizCount = 0,
+                            devType;
+                        var options = {
+                            device: devType,
+                        };
+                
+                
+                        function mediaSizer() {
+                        // Determines the correct viz layout according to screen sizes.
+                            if (window.matchMedia("(max-width: 480px)").matches) {
+                                //alert("I am a phone layout!");
+                                devType = 'phone';
+                                vWidth = 450;
+                                vHeight = 2000;
+                                //options.device = 'phone';
+                            } else if (window.matchMedia("(max-width: 980px)").matches) {
+                                //alert("I am a tablet layout!");
+                                devType = 'tablet';
+                                vWidth = 980;
+                                //options.device = 'tablet';
+                            } else {
+                                //alert("I am a desktop layout!");
+                                devType = 'desktop';
+                                vWidth = 1666;
+                                vHeight = 900;
+                                //options.device = 'desktop';
+                            }
+                            console.log("devtype: "+devType )
+                            console.log("launch0")
+                            launchViz(0);
+                            console.log("launch1")        
+                            launchViz(1);
+                            // Launches the viz again with the new sizing at the current index of vizList.
+                      }
+                
+                
+                      function launchViz(vizNav) {
+                        // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
+                        console.log("vizContainer"+vizNav)
+                        console.log("devtype: "+devType )
+                            var vizDiv = document.getElementById("vizContainer"+vizNav),
+                            // Will embed the visualization on a div with id="VizContainer"
+                            options = {
+                                device: devType,
+                                width: vWidth,
+                                height: vHeight,
+                                hideTabs: true,
+                                hideToolbar: true,
+                                onFirstInteractive: function () {
+                                    listenToMarksSelection();
+                                }
+                            };
+                            
+                
+                            var vizURL = vizList[vizNav];
+                            // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
+                
+                                    try {
+                                        // Initializes the viz from the array with desired options. 
+                                        viz = new tableau.Viz(vizDiv, vizURL, options);
+                                if (!viz) throw 'viz not initialized'
+                                    }
+                                    catch(err) {
+                                        alert(err);
+                                    }
+                                    finally {
+                                        console.log('whatever')
+                                        console.count('initViz')
+                                    }
+                            
+                        }
+                
+                </script>
+            
+            
+            
+
+
+
+
+
+
+</head>
+
+<body class="" style="">
+    <div class="div-global" style="width: 100%; height: 100%;">
+        <div class="container-fluid">
+            <header id="header">
+                <div class="container">
+                    <div class="row header">
+                        <div class="col-md-3 col-xs-12 logo-header">
+                            <a href="https://www.omnibrasil.com.br/"><img class="img-logo" src="https://www.omnibrasil.com.br/assets/home/img/logo.png"></a>
+                            <a href="https://www.omnibrasil.com.br/"><img class="img-logo-m center-block" src="https://www.omnibrasil.com.br/assets/home/img/logo.png"></a>
+                        </div>
+                        <div class="col-md-7 col-xs-12">
+                            <ul class="top-menu">
+                                <li class="canal-transp-header">
+                                    <a href="https://canaltransparencia.com.br/omnitaxiaereo" target="_blank">
+                                        <p>CANAL DE TRANSPARÊNCIA</p>
+                                    </a>
+                                </li>
+                                <li class="trabalhe-header">
+                                    <a href="https://www.omnibrasil.com.br/pt_BR/trabalhe-conosco/">
+                                        <p>TRABALHE CONOSCO</p>
+                                    </a>
+                                </li>
+                                <li class="contato-header">
+                                    <a href="https://www.omnibrasil.com.br/pt_BR/contato/">
+                                        <p>CONTATO</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-xs-12" style="padding: 0;">
+                            <div class="box-top-m">
+                                <a class="icone-insta-header"
+                                    href="https://www.linkedin.com/company/omni-taxi-a%C3%A9reo/" target="_blank"><img
+                                        src="https://www.omnibrasil.com.br/assets/home/img/icone_linkedin.png"></a>
+                                <a class="icone-insta-header" href="https://www.instagram.com/omnitaxiaereo/"
+                                    target="_blank"><img src="https://www.omnibrasil.com.br/assets/home/img/incone_instagram.png"></a>
+
+                                <ul class="bandeiras-idiomas">
+                                    <li class="band-brasil">
+                                        <a href="https://www.omnibrasil.com.br/pt_BR/" data-toggle="tooltip" data-placement="bottom" title=""
+                                            data-original-title="português">
+                                            <img src="https://www.omnibrasil.com.br/assets/home/img/idioma-br.png">
+                                        </a>
+                                    </li>
+                                    <li class="band-usa">
+                                        <a href="https://www.omnibrasil.com.br/en/" data-toggle="tooltip" data-placement="bottom" title=""
+                                            data-original-title="english">
+                                            <img src="https://www.omnibrasil.com.br/assets/home/img/idioma-usa.png">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="box-header-voe">
+                                <p style="color: #016194; float: left; margin-top: 5px; margin-left: 25px;"><b><span
+                                            style="color: #b7b7b7;">VOE</span> OMNI</b><img
+                                        src="https://www.omnibrasil.com.br/assets/home/img/logo-login.jpg"></p>
+                                <div id="btn-salesforce-login" class="bt-login-box"><button id="sfid-login-button"
+                                        class="sfid-button" onclick="SFIDWidget.login()">Efetuar login</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row faixa-azul"></div>
+
+                <div class="row menu-all">
+                    <div class="container nav-top1">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid nav-top1">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Menu</a>
+                                </div>
+
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="quem-somos">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/quem-somos/" class="">QUEM SOMOS</a>
+                                        </li>
+                                        <li class="servicos">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/servicos/" class="">SERVIÇOS</a>
+                                        </li>
+                                        <li class="aeronaves">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/aeronaves/" class="">AERONAVES</a>
+                                        </li>
+                                        <li class="div-drone">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/drones/" class="ativo">DIVISÃO DE DRONES</a>
+                                        </li>
+                                        <li class="seguranca-operacional">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/seguranca-operacional/" class="">SEGURANÇA OPERACIONAL</a>
+                                        </li>
+                                        <li class="voe-omni">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/q-e-sms/" class="">Q&amp;SMS</a>
+                                        </li>
+                                        <li class="certificacoes">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/certificacoes/" class="">CERTIFICAÇÕES</a>
+                                        </li>
+                                        <li class="noticias">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/noticias/" class="">NOTÍCIAS</a>
+                                        </li>
+                                        <li class="quem-somos">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/investidor/comunicados/" class="">INVESTIDORES</a>
+                                        </li>
+                                        <!-- só mobile no desktop esse menu é o do topo -->
+                                        <li class="menu-mob">
+                                            <a href="https://canaltransparencia.com.br/omnitaxiaereo" target="_blank">
+                                                <p>CANAL DE TRANSPARÊNCIA</p>
+                                            </a>
+                                        </li>
+                                        <li class="menu-mob">
+                                            <a href="https://pesquisa.omnibrasil.com.br/" target="_blank">
+                                                <p>PESQUISA SATISFAÇÃO</p>
+                                            </a>
+                                        </li>
+                                        <li class="menu-mob">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/trabalhe-conosco/">
+                                                <p>TRABALHE CONOSCO</p>
+                                            </a>
+                                        </li>
+                                        <li class="menu-mob">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/contato/">
+                                                <p>CONTATO</p>
+                                            </a>
+                                        </li>
+                                        <li class="menu-mob">
+                                            <a href="https://www.omnibrasil.com.br/pt_BR/">
+                                                <p>PORTUGUÊS</p>
+                                            </a>
+                                        </li>
+                                        <li class="menu-mob">
+                                            <a href="https://www.omnibrasil.com.br/en/">
+                                                <p>ENGLISH</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <style type="text/css">
+                .nav-tabs>li.active>a,
+                .nav-tabs>li.active>a:hover,
+                .nav-tabs>li.active>a:focus {
+                    background-color: transparent;
+                    border: 0;
+                    color: #666;
+                }
+
+                div#carrossel-baixo-drone {
+                    height: 708px;
+                }
+
+                .btn-primary:focus {
+                    color: #fff;
+                    background-color: #3071a9;
+                    border-color: #285e8e;
+                }
+
+
+
+                @media (max-width: 415px) {
+                    div#carrossel-baixo-drone {
+                        height: auto !important;
+                    }
+                }
+            </style>
+            <div class="row">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item next left">
+                            <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner/intro.jpg" class="img-responsive"
+                                style="width: 100%;">
+                        </div>
+                        <div class="item">
+                            <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner/agro.jpg" class="img-responsive"
+                                style="width: 100%;">
+                        </div>
+                        <div class="item">
+                            <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner/energia.jpg" class="img-responsive"
+                                style="width: 100%;">
+                        </div>
+                        <div class="item">
+                            <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner/oleo-e-gas.jpg" class="img-responsive"
+                                style="width: 100%;">
+
+                        </div>
+                        <div class="item active left">
+                            <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner/mineracao.jpg" class="img-responsive"
+                                style="width: 100%;">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="titulo-drone-principal" style="margin-top: 80px; text-align: center;">QUEREMOS
+                            SER<br> <span>SUA DIVISÃO DE DRONES</span></h2>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>OMNI <span>divisão de
+                                    Drones</span></b></h2>
+                        <p style="margin-bottom: 30px; font-size: 17px;">Clientes exigentes e com grandes
+                            responsabilidades requerem suporte de serviços igualmente comprometidos.</p>
+                        <p style="margin-bottom: 30px; font-size: 17px;">A imagem precisa, em tempo real e
+                            georeferenciada traz a informação necessária a gestão inteligente e eficiente de qualquer
+                            segmento empresarial. </p>
+                        <p style="font-size: 17px;">Obtenha vantagens em economia, segurança e rapidez em processos
+                            simples e singulares.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/logos.jpg" class="img-responsive" style="float:right;">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>quem
+                                <span>somos</span></b></h2>
+                        <p style="margin-bottom: 30px; font-size: 17px;">Na OMNI Táxi Aéreo atuamos há muitos anos como
+                            transportadores de pessoas e cargas, atendendo principalmente o exigente mercado de óleo e
+                            gás offshore, pousando frequentemente em plataformas na bacia de Campos e no pré-sal.</p>
+                        <p style="font-size: 17px;">Com atenção na constante evolução tecnológica e tendências de
+                            mercado, iniciamos em 2018 a prestação de serviços de captura de imagens empregando drones.
+                        </p>
+                        <p style="font-size: 17px;">Em julho de 2021 assinamos um MoU com a Nordic Unmanned para
+                            representar e operar seus produtos no mercado brasileiro.</p>
+                        <p style="font-size: 17px;"><a href="https://nordicunmanned.com/" target="_blank">Nordic
+                                Unmanned - Are you prepared for the unmanned future?</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="carrossel-position-2" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/foto_quem_somos.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/foto_quem_somos_02.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/foto_quem_somos_03.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control position-2" href="#carrossel-position-2" role="button"
+                                data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left position-2" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carrossel-position-2" role="button"
+                                data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right position-2" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 80px;">
+                        <h2 class="titulo-drone" style="text-align: center; margin-bottom: 40px; padding-left: 0;">
+                            <b>Prontos <span>para decolar?</span></b></h2>
+                        <p style="text-align: center; font-size: 17px;">Fique tranquilo! Para cada caso, oferecemos
+                            soluções sob medida. O drone certo nas mãos<br> certas para um simples voo ou um programa de
+                            monitoramento.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="text-align: center;">
+                <div style="display: inline-block;">
+                    <div id="vizContainer0" ></div>
+                </div></div>
+
+            <div class="row" style="margin-top: 80px;">
+                <a href="#contato" class="scrollSuave">
+                </a><a href="#contato" class="bt-contato-drone scrollSuave">ENTRE EM CONTATO</a>
+                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/banner-meio.jpg" class="img-responsive" style="width: 100%;">
+
+
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>nossos
+                                <span>diferenciais</span></b></h2>
+                        <p style="margin-bottom: 30px; font-size: 17px;">• Começamos com veículos não tripulados há
+                            muitos anos, conhecendo os sensores, a mecânica dos veículos e seus sistemas de controle e
+                            comunicação.</p>
+                        <p style="margin-bottom: 30px; font-size: 17px;">• Entendemos a regulamentação associada à
+                            operação de veículos remotamente controlados em todos os ambientes e seus requisitos de
+                            certificação.</p>
+                        <p style="margin-bottom: 30px; font-size: 17px;">• Nossas competências técnicas somadas a
+                            experiência multidisciplinar, lidando com rígidos controles de qualidade em operação e em
+                            manutenção, nos permitem desenvolver soluções adequadas com perspectiva nas necessidades dos
+                            clientes.</p>
+                        <p style="font-size: 17px;">• Somos comprometidos com o sucesso das nossas propostas.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="carrossel-position-4" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/diferenciais_01.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/diferenciais_02.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/diferenciais_03.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/diferenciais_04.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                                <div class="item">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/drone/diferenciais_05.jpg" class="img-responsive"
+                                        style="width: 100%;">
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control position-4" href="#carrossel-position-4" role="button"
+                                data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left position-4" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carrossel-position-4" role="button"
+                                data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right position-4" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>Como
+                                <span>Fazemos</span></b></h2>
+                        <p style="font-size: 17px;">Não importa o tamanho da aeronave ou tipo de veículo, para obter
+                            resultados efetivos em ambiente controlado a cultura empresarial e aeronáutica são
+                            determinantes para executar serviços com segurança e qualidade.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>segmentos <span>de
+                                    atuação</span></b></h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="carrossel-baixo-drone" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>Agronegócio</b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_01.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_02.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_03.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Monitoramento de invasoras;</p>
+                                                <p style="font-size: 17px;">• Medição e monitoramento de índices NDVI e
+                                                    NDRE;</p>
+                                                <p style="font-size: 17px;">• Detecção de falhas de plantio; </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Monitoramento e controle do
+                                                    desenvolvimento da lavoura durante o emprego de reguladores de
+                                                    desenvolvimento vegetal;</p>
+                                                <p style="font-size: 17px;">• Estimativa de produção;</p>
+                                                <p style="font-size: 17px;">• Identificação de fatores de estresse
+                                                    hídrico ou biológico do cultivo;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item active">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>Agronegócio</b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_04.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_05.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/agro_06.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Monitoramento de invasoras;</p>
+                                                <p style="font-size: 17px;">• Medição e monitoramento de índices NDVI e
+                                                    NDRE;</p>
+                                                <p style="font-size: 17px;">• Detecção de falhas de plantio; </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Monitoramento e controle do
+                                                    desenvolvimento da lavoura durante o emprego de reguladores de
+                                                    desenvolvimento vegetal;</p>
+                                                <p style="font-size: 17px;">• Estimativa de produção;</p>
+                                                <p style="font-size: 17px;">• Identificação de fatores de estresse
+                                                    hídrico ou biológico do cultivo;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>O&amp;G </b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_01.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_02.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_03.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Inspeção em estruturas verticais, torres e
+                                                    guindastes;</p>
+                                                <p style="font-size: 17px;">• Inspeções em compartimentos confinados,
+                                                    dutos e tanques;</p>
+                                                <p style="font-size: 17px;">• Inspeções em costados e medição de
+                                                    espessura de chapas;</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Localização, identificação e monitoramento
+                                                    de vazamentos de óleo em ambiente marinho;</p>
+                                                <p style="font-size: 17px;">• Inspeções em instalações industriais e
+                                                    armazenamento;</p>
+                                                <p style="font-size: 17px;">• Inspeções em Oleodutos/Gasodutos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>O&amp;G </b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_04.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_05.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/O-G_06.jpg" alt="..." class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Inspeção em estruturas verticais, torres e
+                                                    guindastes;</p>
+                                                <p style="font-size: 17px;">• Inspeções em compartimentos confinados,
+                                                    dutos e tanques;</p>
+                                                <p style="font-size: 17px;">• Inspeções em costados e medição de
+                                                    espessura de chapas;</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Localização, identificação e monitoramento
+                                                    de vazamentos de óleo em ambiente marinho;</p>
+                                                <p style="font-size: 17px;">• Inspeções em instalações industriais e
+                                                    armazenamento;</p>
+                                                <p style="font-size: 17px;">• Inspeções em Oleodutos/Gasodutos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="item">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>Energia</b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/energia_01.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/energia_02.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/energia_03.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Inspeção com sensores Eletro Ótico e
+                                                    Infravermelho.</p>
+                                                <p style="font-size: 17px;">• Realizamos levantamentos de curva IxV em
+                                                    painéis fotovoltaicos.</p>
+                                                <p style="font-size: 17px;">• Emprego de sistemas automatizados de
+                                                    análise de imagens e geração de relatórios.</p>
+                                                <p style="font-size: 17px;">• Com parceiros competentes, realizamos a
+                                                    análise de imagens de campos de painéis fotovoltáicos com
+                                                    inteligência artificial.</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Estamos desenvolvendo a capacidade de
+                                                    transporte de pequenas cargas (até 45 Kg) por drones para melhor
+                                                    atender nossos clientes.</p>
+                                                <p style="font-size: 17px;">• Inspeção em geradores eólicos;</p>
+                                                <p style="font-size: 17px;">• Inspeção em linhas de transmissão;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="col-md-12">
+                                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center">
+                                            <b>Mineração</b></h3>
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/mineracao_01.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/mineracao_02.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="col-md-4" style="margin-bottom: 20px;">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/mineracao_03.jpg" alt="..."
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="container" style="clear: both;">
+                                        <div class="row" style="margin-top: 80px;">
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Medições de volumes e áreas;</p>
+                                                <p style="font-size: 17px;">• Segurança patrimonial;</p>
+                                                <p style="font-size: 17px;">• Levantamento dos volumes retirados e
+                                                    transportados;</p>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p style="font-size: 17px;">• Avaliação de impacto dos serviços em
+                                                    andamento;</p>
+                                                <p style="font-size: 17px;">• Reconhecimento de novas áreas;</p>
+                                                <p style="font-size: 17px;">• Inspeção em instalações e equipamentos.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carrossel-baixo-drone" role="button"
+                                data-slide="prev" style="color: #666666;">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carrossel-baixo-drone" role="button"
+                                data-slide="next" style="color: #666666;">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal"
+                            data-target="#myModal" align="center" style="width: auto; height: auto; margin-top: 80px;">
+                            GALERIA DE IMAGENS </button>
+
+                        <!-- Modal -->
+                        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                            style="overflow-y: hidden; display: none;" aria-hidden="true">
+                            <div class="modal-dialog" role="document" style="width: 80%;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body" style="padding-left: 15px;">
+                                        <div>
+
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist" style="border: 0px;">
+                                                <li role="presentation" class=""><a href="#todas" aria-controls="todas"
+                                                        role="tab" data-toggle="tab">TODAS</a></li>
+                                                <li role="presentation"><a href="#agronegocio"
+                                                        aria-controls="agronegocio" role="tab"
+                                                        data-toggle="tab">AGRONEGÓCIO</a></li>
+                                                <li role="presentation" class="active"><a href="#og" aria-controls="og"
+                                                        role="tab" data-toggle="tab">O&amp;G</a></li>
+                                                <li role="presentation"><a href="#mineracao" aria-controls="mineracao"
+                                                        role="tab" data-toggle="tab">MINERAÇÃO</a></li>
+                                                <li role="presentation"><a href="#energia" aria-controls="energia"
+                                                        role="tab" data-toggle="tab">ENERGIA</a></li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane" id="todas">
+                                                    <div id="galeria-fotos" class="carousel slide" data-ride="carousel">
+                                                        <!-- Indicators -->
+
+                                                        <!-- Wrapper for slides -->
+                                                        <div class="carousel-inner" role="listbox">
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item active left">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item next left">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_06.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_06.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_07.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_08.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#galeria-fotos"
+                                                            role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left"
+                                                                aria-hidden="true" style="margin-left: -15px;"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria-fotos"
+                                                            role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right"
+                                                                aria-hidden="true" style="margin-right: -15px;"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="agronegocio">
+                                                    <div id="galeria-fotos1" class="carousel slide"
+                                                        data-ride="carousel">
+                                                        <div class="carousel-inner" role="listbox">
+                                                            <div class="item active">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_agro_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#galeria-fotos1"
+                                                            role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left"
+                                                                aria-hidden="true" style="margin-left: -15px;"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria-fotos1"
+                                                            role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right"
+                                                                aria-hidden="true" style="margin-right: -15px;"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane active" id="og">
+                                                    <div id="galeria-fotos2" class="carousel slide"
+                                                        data-ride="carousel">
+                                                        <!-- Indicators -->
+
+                                                        <!-- Wrapper for slides -->
+                                                        <div class="carousel-inner" role="listbox">
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item active">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_06.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_07.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_OG_08.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+
+                                                        </div>
+
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#galeria-fotos2"
+                                                            role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left"
+                                                                aria-hidden="true" style="margin-left: -15px;"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria-fotos2"
+                                                            role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right"
+                                                                aria-hidden="true" style="margin-right: -15px;"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="mineracao">
+                                                    <div id="galeria-fotos3" class="carousel slide"
+                                                        data-ride="carousel">
+                                                        <!-- Indicators -->
+
+                                                        <!-- Wrapper for slides -->
+                                                        <div class="carousel-inner" role="listbox">
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item active">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_mineracao_06.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+
+
+                                                        </div>
+
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#galeria-fotos3"
+                                                            role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left"
+                                                                aria-hidden="true" style="margin-left: -15px;"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria-fotos3"
+                                                            role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right"
+                                                                aria-hidden="true" style="margin-right: -15px;"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="energia">
+                                                    <div id="galeria-fotos4" class="carousel slide"
+                                                        data-ride="carousel">
+                                                        <!-- Indicators -->
+
+                                                        <!-- Wrapper for slides -->
+                                                        <div class="carousel-inner" role="listbox">
+                                                            <div class="item active">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_01.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_02.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_03.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_04.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+                                                            <div class="item">
+                                                                <img src="https://www.omnibrasil.com.br/assets/home/img/drone/galeria/galeria_energia_05.jpg"
+                                                                    alt="" class="img-responsive" style="width: 100%;">
+                                                            </div>
+
+
+
+                                                        </div>
+
+                                                        <!-- Controls -->
+                                                        <a class="left carousel-control" href="#galeria-fotos4"
+                                                            role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left"
+                                                                aria-hidden="true" style="margin-left: -15px;"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria-fotos4"
+                                                            role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right"
+                                                                aria-hidden="true" style="margin-right: -15px;"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-12">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>Outros
+                                <span>serviços</span></b></h2>
+                    </div>
+
+                    <div class="col-md-6">
+                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/icone_seguro.png" alt="" class="img-responsive center-block">
+                        <h4>SEGURO E RESSEGURO</h4>
+                        <p>• Imagem para cadastrar as condições do objeto segurado na contratação;</p>
+                        <p>• Avaliação e documentação em caso de ocorrência de sinistros;</p>
+                        <p>• Acompanhamento cíclico de projetos importantes.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/icone_ambiente.png" alt="" class="img-responsive center-block">
+                        <h4>MEIO AMBIENTE</h4>
+                        <p>• Monitoramento do desmatamento;</p>
+                        <p>• Monitoramento da poluição;</p>
+                        <p>• Exploração Geológica;</p>
+                        <p>• Georreferenciamento de pontos inacessíveis;</p>
+                        <p>• Avaliação de danos ambientais e ambientais;</p>
+                        <p>• Monitoramento costeiro.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/icone_infraestrutura.png" alt=""
+                            class="img-responsive center-block">
+                        <h4>INFRAESTRUTURA</h4>
+                        <p>• Acompanhamento e supervisão de projetos;</p>
+                        <p>• Gestão dos processos de manutenção;</p>
+                        <p>• Inventário de ativos;</p>
+                        <p>• Digitalização de dados.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.omnibrasil.com.br/assets/home/img/drone/icone_industrias.png" alt=""
+                            class="img-responsive center-block">
+                        <h4>ESPAÇOS CONFINADOS INDUSTRIAIS</h4>
+                        <p>• Tanques, tubulações;</p>
+                        <p>• Estruturas internas;</p>
+                        <p>• Chaminés.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="display: inline-block;">
+                    <div id="vizContainer1" ></div>
+                </div></div>
+
+
+
+
+            <div class="container" id="contato">
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-6">
+                        <h2 class="titulo-drone" style="margin-bottom: 40px; padding-left: 0;"><b>entre <span>em
+                                    contato</span></b></h2>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="titulo-drone" style="margin-bottom: 40px; text-align: center"><b>queremos ser sua
+                                divisão de drones</b></h3>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 100px">
+                    <!-- <form>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">NOME</label>
+                    <input type="name" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">EMAIL</label>
+                    <input type="email" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">TELEFONE</label>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">EMPRESA</label>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">CARGO</label>
+                    <input type="text" class="form-control" id="" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">MENSAGEM</label>
+                    <textarea class="form-control" rows="8"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" style="float: right;">ENVIAR</button>
+
+            </div>
+        </form> -->
+
+                    <form method="post" action="" role="form">
+                        <div class="row">
+                            <div class="col-md-6 contato-left">
+                                <div class="form-group">
+                                    <input type="text" id="contato_drones_nome" name="contato_drones[nome]"
+                                        required="required" placeholder="NOME" class="form-control"
+                                        style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" id="contato_drones_email" name="contato_drones[email]"
+                                        required="required" placeholder="EMAIL" class="form-control">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="contato_drones_telefone" name="contato_drones[telefone]"
+                                        required="required" placeholder="TELEFONE" class="form-control">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="contato_drones_empresa" name="contato_drones[empresa]"
+                                        required="required" placeholder="EMPRESA" class="form-control">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="contato_drones_cargo" name="contato_drones[cargo]"
+                                        required="required" placeholder="CARGO" class="form-control">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea id="contato_drones_mensagem" name="contato_drones[mensagem]"
+                                        required="required" placeholder="MENSAGEM" rows="8"
+                                        class="form-control"></textarea>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2 col-md-offset-9">
+                                        <button type="submit" class="btn btn-primary" style="float: right;">
+                                            ENVIAR </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="contato_drones__token" name="contato_drones[_token]"
+                            class="form-control" value="c119710f73eefd22b64ff00e9f2ddacdc7b1c37e">
+                    </form>
+                </div>
+            </div>
+            <script async="" src="https://www.omnibrasil.com.br//www.google-analytics.com/analytics.js"></script>
+            <script type="text/javascript">
+                var $doc = $('html, body');
+                $('a').click(function () {
+                    $doc.animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 500);
+                    return false;
+                });
+
+                $(document).ready(function () {
+
+                    $(".filter-button").click(function () {
+                        var value = $(this).attr('data-filter');
+
+                        if (value == "all") {
+                            //$('.filter').removeClass('hidden');
+                            $('.filter').show('1000');
+                        }
+                        else {
+                            //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                            //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                            $(".filter").not('.' + value).hide('3000');
+                            $('.filter').filter('.' + value).show('3000');
+
+                        }
+                    });
+
+                    if ($(".filter-button").removeClass("active")) {
+                        $(this).removeClass("active");
+                    }
+                    $(this).addClass("active");
+
+                });
+            </script>
+
+
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-10">
+                            <button type="button" id="btn-scroll-top">VOLTAR AO TOPO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer-all">
+                    <div class="container conteudo-footer">
+                        <div class="row ">
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="https://www.omnibrasil.com.br/assets/home/img/logo-footer.png">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="telefone-footer">
+                                            <li><img src="https://www.omnibrasil.com.br/assets/home/img/icon-tel-footer.png"></li>
+                                            <li>
+                                                <p>+55 21 3478-1400</p>
+                                                <p>SAC: 0800 701 7995</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 col-xs-3 menu-rodape">
+                                <div class="row">
+                                    <div class="col-md-4 posi-menu1">
+                                        <ul class="links-footer">
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/quem-somos/">Quem Somos</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/certificacoes/">Certificações</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/noticias/">Notícias</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/links/">Links</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 posi-menu2">
+                                        <ul class="links-footer">
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/servicos/">Serviços</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/aeronaves/">Aeronaves</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/seguranca-operacional/">Segurança Operacional</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/q-e-sms/">Q&amp;SMS</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 posi-menu3">
+                                        <ul class="links-footer">
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/contato/">Contato</a></li>
+                                            <li><a href="https://www.omnibrasil.com.br/pt_BR/trabalhe-conosco/">Trabalhe Conosco</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-xs-4 logos-bottom">
+                                <ul class="logos-footer-right">
+                                    <li><img src="https://www.omnibrasil.com.br/assets/home/img/ohi-footer.png"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conteudo-cop-footer">
+                        <div class="container">
+                            <div class="row end-footer">
+                                <div class="col-md-10">
+                                    <img src="https://www.omnibrasil.com.br/assets/home/img/icone_mapa.png">
+                                    <p>End.:Av. Paisagista José Silva Azevedo Neto nº 200, Bloco 3, Sala 403, Condomínio
+                                        O2 Corporate &amp; Offices – Barra da Tijuca – Rio de Janeiro/RJ</p>
+                                </div>
+
+                                <div class="col-md-2  logo-pura-footer">
+                                    <a href="http://www.puracomunicacao.com.br" target="_blank"><img
+                                            src="https://www.omnibrasil.com.br/assets/home/img/logo-pura-footer.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <div id="barracookies"
+                style="position: fixed; bottom: 0px; left: 0px; width: 100%; z-index: 999; color: rgb(236, 240, 241); background-color: rgb(1, 97, 148); text-align: center; padding: 15px 20px; font-size: 12px; margin: 0px !important; display: none;">
+                Usamos cookies em nosso site para fornecer a experiência mais relevante, lembrando suas preferências e
+                visitas repetidas. Ao clicar em "Aceitar", concorda com a utilização de TODOS os cookies.
+                <button type="button" id="acceptcookies"
+                    style="margin-top: 0px; margin-left: 10px; border: 1px solid; #fff; color: #fff; text-align: center; padding: 7px 15px 7px 15px; background: transparent;">
+                    Aceitar
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Google analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74379371-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript" src="https://www.omnibrasil.com.br/js/34b7e35.js"></script>
+
+    <script type="text/javascript"
+        src="https://www.omnibrasil.com.br/assets/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#modal').modal('show');
+        });
+        function closeModal() {
+            //código para dar stop no vídeo aqui
+            //use $('#youriframeid').remove(); para forçar a remoção do html do iFrame
+            //caso queira alguma alternativa para parar o vídeo
+            $('#youriframeid').remove();
+
+            //código para fechar a modal aqui
+            $("#modal").modal("hide");
+        }
+    </script>
+    <script
+        src="https://omnibrasil.force.com/voeomni/servlet/servlet.loginwidgetcontroller?type=javascript_widget&amp;locale=br"
+        async="" defer=""></script>
+    <script type="text/javascript">
+        // var onLogin = function (identity) {
+        //     console.log(identity);
+        // }
+        // var onLogout = function () {
+        //     console.log('onLogout');
+        // }
+        window.document.addEventListener('logou', handleEvent, false)
+        function handleEvent(e) {
+            window.location.href = "https://omnibrasil.force.com/voeomni";
+        }
+    </script>
+    <script>
+        $('#modal').on('hidden.bs.modal', function () {
+            var $this = $(this);
+            //get iframe on click
+            var vidsrc_frame = $this.find("iframe");
+            var vidsrc_src = vidsrc_frame.attr('src');
+            console.log(`videosrc=` + vidsrc_src);
+            vidsrc_frame.attr('src', '');
+            vidsrc_frame.attr('src', vidsrc_src);
+        });
+
+
+
+
+    </script>
+
+
+    <iframe id="sfid_xdomain"
+        src="https://omnibrasil.force.com/voeomni/servlet/servlet.loginwidgetcontroller?type=javascript_xauth&amp;host=www.omnibrasil.com.br"
+        style="display: none;"></iframe>
+</body>
+
+</html>
